@@ -70,7 +70,7 @@ def steering_model():
 	return model
 
 model = steering_model()
-history = model.fit(X, y, batch_size=128, nb_epoch=2, validation_split=0.2)
+history = model.fit(X, y, batch_size=128, nb_epoch=5, validation_split=0.2)
 
 print("Saving model weights and configuration file.")
 
