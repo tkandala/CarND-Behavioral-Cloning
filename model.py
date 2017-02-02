@@ -1,5 +1,7 @@
 import numpy as np
 import pandas
+import json
+import h5py
 
 training_data_file = "driving_log.csv"
 dataframe = pandas.read_csv(training_data_file, usecols=['center', 'steering'])
@@ -54,7 +56,7 @@ def steering_model():
 	model.add(Convolution2D(64, 5, 5, subsample=(2, 2), border_mode="same"))
 	#model.add(ELU())
 	#model.add(Convolution2D(80,3,3,border_mode='valid'))
-	#model.add(MaxPooling2D(pool_size=(2,2)))
+	model.add(MaxPooling2D(pool_size=(2,2)))
 	model.add(Flatten())
 	model.add(Dropout(0.2))
 	#model.add(Activation('relu'))
