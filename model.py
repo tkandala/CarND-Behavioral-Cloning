@@ -15,31 +15,37 @@ from sklearn.model_selection import KFold
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
+from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
+
+datagen = ImageDataGenerator()
+
 from PIL import Image
-from io import BytesIO
-import base64
 
-image_array = []
+x = []
 for i in range(len(X)):
-	image = Image.open(X[i])
-	image_array.append(image)
-	image.close()
+	image = load_img(X[i])
+	image_PIL = Image.open(X[i])
+	image_array = np.asarray(image_PIL)
+	image_array = image_array[None, :, :, :]
+	#print(image_array.shape)
+	#x = img_to_array(image)
+	#x = x.reshape((1,) + x.shape)
+	x.append(image_array)
 
-#transformed_image_array = image_array[None, :, :, :]
+X = x
 
-X = image_array
-from sklearn.utils import shuffle
-X,y = shuffle(X,y)
+#from sklearn.utils import shuffle
+#X,y = shuffle(X,y)
 
 from keras.layers import Dense, Activation, ELU, Convolution2D, Dropout, MaxPooling2D, Lambda, Flatten
 
 def steering_model():
 	# create model
 	model = Sequential()
-	#model.add(Lambda(lambda x: x/127.5 - 1.,input_shape=(3, 160, 320),output_shape=(3, 160, 320)))
+	model.add(Lambda(lambda x: x/127.5 - 1.,input_shape=(160, 320, 3),output_shape=(160, 320, 3)))
 	#model.add(Convolution2D(16, 8, 8, subsample=(4, 4), border_mode="same"))
-	model.add(Convolution2D(32,3,3,border_mode='valid',input_shape=(320,160,3)))
-	model.add(ELU())
+	#model.add(Convolution2D(32,3,3,border_mode='valid',input_shape=(320,160,3)))
+	#model.add(ELU())
 	#model.add(Convolution2D(80,3,3,border_mode='valid'))
 	#model.add(ELU())
 	#model.add(Convolution2D(80,3,3,border_mode='valid'))
