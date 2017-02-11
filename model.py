@@ -79,13 +79,13 @@ def steering_model():
 	model.add(Convolution2D(128, 5, 5, subsample=(2, 2), border_mode="same"))
 	# ELU Activation Layer #4
 	model.add(ELU())
-	# Convolutional Layer #4 with depth of 256, 5x5 kernel, 2x2 Stride
+	# Convolutional Layer #5 with depth of 256, 5x5 kernel, 2x2 Stride
 	model.add(Convolution2D(256, 5, 5, subsample=(2, 2), border_mode="same"))
 	# Max Pooling
 	model.add(MaxPooling2D(pool_size=(2,2)))
 	# Flatter layers
 	model.add(Flatten())
-	# Adding a dropout of 20%
+	# Adding a dropout of 40%
 	model.add(Dropout(0.4))
 	# ELU Activation Layer #5
 	model.add(ELU())
