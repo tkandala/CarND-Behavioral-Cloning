@@ -4,7 +4,7 @@
 
 ---
 
-**Behavrioal Cloning Project**
+**Behavioral Cloning Project**
 
 
 [//]: # (Image References)
