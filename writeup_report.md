@@ -9,12 +9,17 @@
 ### Sample training images
 
 
-![Center camera image](./images/center_2016_12_01_13_30_48_287.jpg)
-![left camera image](./images/left_2016_12_01_13_30_48_287.jpg)
-![right camera image](./images/right_2016_12_01_13_30_48_287.jpg)
-![Center Image near dirt track](./images/center_2016_12_01_13_31_15_513.jpg)
-![left Image near dirt track](./images/left_2016_12_01_13_31_15_513.jpg)
-![right Image near dirt track](./images/right_2016_12_01_13_31_15_513.jpg)
+![Center camera image](./images/center_2016_12_01_13_30_48_287.jpg) Center Camera Image
+
+![left camera image](./images/left_2016_12_01_13_30_48_287.jpg) left camera image
+
+![right camera image](./images/right_2016_12_01_13_30_48_287.jpg) right camera image
+
+![Center Image near dirt track](./images/center_2016_12_01_13_31_15_513.jpg) Center Image near dirt track
+
+![left Image near dirt track](./images/left_2016_12_01_13_31_15_513.jpg) left Image near dirt track
+
+![right Image near dirt track](./images/right_2016_12_01_13_31_15_513.jpg) right Image near dirt track
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
