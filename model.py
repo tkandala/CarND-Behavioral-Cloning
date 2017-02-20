@@ -171,6 +171,7 @@ with open("./model.json", "w") as json_file:
 
     json.dump(model_json, json_file)
 
-model.save_weights("./model.h5")
+model.save_weights("./model_weights.h5")
+model.save("./model.h5")
 
 print("Saved model to disk")
