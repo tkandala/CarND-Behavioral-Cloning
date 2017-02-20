@@ -106,7 +106,6 @@ def steering_model():
 	model.add(Cropping2D(cropping=((50,20), (0,0)), input_shape=(160,320,3)))
 	# Start off with a Lambda layer that is going to normalize the RGB values between -1 & 1
 	model.add(Lambda(lambda x: x/127.5 - 1.,input_shape=(90, 320, 3),output_shape=(90, 320, 3)))
-	#model.add(Lambda(lambda x: x/127.5 - 1.,input_shape=(160, 320, 3),output_shape=(160, 320, 3)))
 	# Convolutional Layer #1 with depth of 16, 8x8 kernel, 4x4 Stride
 	model.add(Convolution2D(16, 8, 8, subsample=(4, 4), border_mode="same"))
 	# ELU Activation Layer #1
